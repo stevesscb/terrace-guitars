@@ -8,11 +8,11 @@ const navLinks = [
     path: '/',
   },
   {
-    label: 'About us',
+    label: 'About',
     path: '/about',
   },
   {
-    label: 'Contact us',
+    label: 'Contact',
     path: '/contact',
   },
   {

@@ -41,4 +41,11 @@ h1 {
 a {
   color: currentColor;
   text-decoration: none;
+  font-style: inherit;
+}
+
+button {
+  font-size: var(--font-normal);
+  font-style: inherit;
+  cursor: pointer;
 }
