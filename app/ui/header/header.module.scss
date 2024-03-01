@@ -1,0 +1,10 @@
+.header {
+  background: var(--color-dark);
+  color: var(--color-light);
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
