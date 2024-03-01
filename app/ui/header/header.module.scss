@@ -1,10 +1,33 @@
-.header {
-  background: var(--color-dark);
-  color: var(--color-light);
+.hero {
+  background: var(--color-black);
+  margin-top: -2rem;
+}
 
-  .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+  position: relative;
+
+  .outer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+    .inner {
+      padding: 1rem;
+      color: var(--color-light);
+      background: rgba(0, 0, 0, 0.802);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      h1 {
+        letter-spacing: 2px;
+      }
+    }
   }
 }
