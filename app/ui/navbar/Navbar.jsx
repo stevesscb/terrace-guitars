@@ -29,8 +29,8 @@ export default function Navbar() {
   return (
     <nav className={classes.nav}>
       <ul>
-        {navLinks.map((link) => (
-          <li>
+        {navLinks.map((link, index) => (
+          <li key={index}>
             <Link href={link.path}>{link.label}</Link>
           </li>
         ))}
