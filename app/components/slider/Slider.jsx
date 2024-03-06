@@ -9,14 +9,14 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './slider.scss';
 
-import picOne from '@/public/pic1.webp';
-import picTwo from '@/public/pic2.webp';
-import picThree from '@/public/pic3.webp';
-import picFour from '@/public/pic4.webp';
+import slide1 from '@/public/slide1.webp';
+import slide2 from '@/public/slide2.webp';
+import slide3 from '@/public/slide3.webp';
+import slide4 from '@/public/slide4.webp';
 
 const slides = [
   {
-    src: picOne,
+    src: slide1,
     alt: 'Screenshots of the dashboard project showing desktop version',
     label: 'Slide One',
     description: 'Latest arrivals',
@@ -24,7 +24,7 @@ const slides = [
     linkDescription: 'See our range',
   },
   {
-    src: picTwo,
+    src: slide2,
     alt: 'Screenshots of the dashboard project showing desktop version',
     label: 'Slide Two',
     description: 'Latest arrivals',
@@ -32,7 +32,7 @@ const slides = [
     linkDescription: 'See our range',
   },
   {
-    src: picThree,
+    src: slide3,
     alt: 'Screenshots of the dashboard project showing desktop version',
     label: 'Slide Three',
     description: 'Latest arrivals',
@@ -40,7 +40,7 @@ const slides = [
     linkDescription: 'See our range',
   },
   {
-    src: picFour,
+    src: slide4,
     alt: 'Screenshots of the dashboard project showing desktop version',
     label: 'Slide Four',
     description: 'Latest arrivals',
@@ -65,7 +65,14 @@ export default function SimpleSlider() {
     <Slider {...settings}>
       {slides.map((slide) => (
         <div className='item' key={slide.src}>
-          <Image src={slide.src} className='image' alt={slide.alt} priority />
+          <Image
+            src={slide.src}
+            className='image'
+            alt={slide.alt}
+            width={1400}
+            height={716}
+            priority
+          />
           <div className='label'>
             <h3>{slide.label}</h3>
             <p>{slide.description}</p>

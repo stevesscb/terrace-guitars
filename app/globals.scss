@@ -1,3 +1,5 @@
+@import '@/app/variables.scss';
+
 :root {
   --body-bg: #f0f9ff;
   --color-white: #fff;
@@ -55,14 +57,14 @@ button {
 }
 
 section {
-  padding: 6rem;
+  padding: 10rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 8rem 1.5rem;
+  }
 }
 
 p {
   font-size: var(--font-normal);
   font-weight: 300;
-}
-
-img {
-  border-radius: 5px;
 }
