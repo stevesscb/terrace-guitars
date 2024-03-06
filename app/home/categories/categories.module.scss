@@ -1,0 +1,11 @@
+.categories {
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}

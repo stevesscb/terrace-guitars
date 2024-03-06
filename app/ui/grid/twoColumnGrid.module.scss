@@ -1,12 +1,14 @@
+@import '@/app/variables.scss';
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 3rem;
+  column-gap: 4rem;
   justify-items: center;
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: $bp-medium) {
     grid-template-columns: none;
-    grid-template-rows: repeat(2, auto);
-    row-gap: 2rem;
+    grid-template-rows: repeat(2, (min-max, min-content max-content));
+    row-gap: 4rem;
   }
 }

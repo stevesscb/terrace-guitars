@@ -1,0 +1,41 @@
+@import '@/app/variables.scss';
+
+.footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-size: var(--font-normal);
+  padding: 10rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem 1.5rem;
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min-content, max-content));
+    column-gap: 4rem;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 2rem;
+    }
+  }
+
+  &-list {
+    list-style: none;
+
+    li {
+      margin: 1rem;
+
+      &:first-child {
+        font-size: var(--font-large);
+        text-transform: uppercase;
+      }
+    }
+  }
+}

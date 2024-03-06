@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import Container from '@/app/ui/container/Container';
 import Navbar from '@/app/ui/navbar/Navbar';
@@ -14,6 +17,8 @@ import classes from './header.module.scss';
 const perm = Permanent_Marker({ subsets: ['latin'], weight: '400' });
 
 export default function Header() {
+  const pathName = usePathname();
+
   return (
     <div className={classes.hero}>
       <Container>
@@ -34,7 +39,7 @@ export default function Header() {
               <Navbar />
             </div>
           </div>
-          <Slider />
+          {pathName === '/' && <Slider />}
         </header>
       </Container>
     </div>

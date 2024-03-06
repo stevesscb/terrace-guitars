@@ -1,5 +1,9 @@
+import Card from '@/app/components/card/Card';
 import Wrapper from '@/app/ui/wrapper/Wrapper';
-import classes from './featured.module.scss';
+
+import classes from './featuredGuitars.module.scss';
+
+import { guitars } from '@/app/lib/placeholder-data';
 
 export default function Featured() {
   return (
@@ -7,10 +11,9 @@ export default function Featured() {
       <Wrapper>
         <h4 className={classes.title}>Featured guitars</h4>
         <div className={classes.featured}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          {guitars.map((guitar, index) => (
+            <Card key={index} data={guitar} />
+          ))}
         </div>
       </Wrapper>
     </section>

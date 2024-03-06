@@ -1,0 +1,40 @@
+.featured-video {
+  background: var(--color-light);
+
+  .description {
+    margin: auto 0;
+
+    h3,
+    h4 {
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: var(--font-large);
+      letter-spacing: 1.2px;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-weight: 700;
+    }
+
+    p {
+      margin: 2rem 0;
+    }
+  }
+
+  .media {
+    height: 31rem;
+    width: 55rem;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
