@@ -2,9 +2,7 @@
   background: var(--color-light);
 
   &-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin: auto 0;
   }
 
   h3 {
@@ -23,6 +21,5 @@
   button {
     margin-top: 1rem;
     font-size: var(--font-normal);
-    width: fit-content;
   }
 }
