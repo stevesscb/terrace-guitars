@@ -3,9 +3,11 @@ import Wrapper from '@/app/ui/wrapper/Wrapper';
 
 import classes from './featuredGuitars.module.scss';
 
-import { guitars } from '@/app/lib/placeholder-data';
+import { fetchLatestGuitars } from '@/app/lib/data';
 
-export default function Featured() {
+export default async function Featured() {
+  const guitars = await fetchLatestGuitars();
+
   return (
     <section>
       <Wrapper>

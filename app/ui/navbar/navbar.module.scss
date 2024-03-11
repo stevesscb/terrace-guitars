@@ -25,6 +25,11 @@
         background-position: 100% 100%; /*OR bottom right*/
         background-size: 100% 2px;
       }
+
+      .active {
+        color: var(--color-light-hover);
+        border-bottom: 2px solid currentColor;
+      }
     }
   }
 }

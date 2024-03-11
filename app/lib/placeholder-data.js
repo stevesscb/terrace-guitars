@@ -1,41 +1,52 @@
-export const guitars = [
+const user = {
+  username: 'terrace guitars',
+  email: 'terrace@test.com',
+  passwordHash: 'password',
+};
+
+const guitars = [
   {
-    make: 'Fender',
-    model: 'Stratocaster',
-    year: '1990',
-    price: '1800',
-    path: '/',
-    image:
-      'https://therockinn.com/cdn/shop/files/MG_9974_0b779385-019c-449f-99c7-aeae2a8265f0_1024x1024.jpg?v=1705973038',
+    type: 'ELECTRIC',
+    make: 'Gibson',
+    model: 'SG',
+    year: 1985,
+    price: 1.5,
+    description: 'Amazing axe!',
+    isSold: false,
   },
 
   {
-    make: 'Fender',
-    model: 'Stratocaster',
-    year: '1990',
-    price: '1800',
-    path: '/',
-    image:
-      'https://therockinn.com/cdn/shop/files/MG_9974_0b779385-019c-449f-99c7-aeae2a8265f0_1024x1024.jpg?v=1705973038',
+    type: 'ACOUSTIC',
+    make: 'Taylor',
+    model: 'martin',
+    year: 1981,
+    price: 2.5,
+    description: 'Amazing acoustic!',
+    isSold: false,
   },
 
   {
+    type: 'ELECTRIC',
     make: 'Fender',
-    model: 'Stratocaster',
-    year: '1990',
-    price: '1800',
-    path: '/',
-    image:
-      'https://therockinn.com/cdn/shop/files/MG_9974_0b779385-019c-449f-99c7-aeae2a8265f0_1024x1024.jpg?v=1705973038',
+    model: 'stratocaster',
+    year: 1955,
+    price: 5.5,
+    description: 'Rare, excellent condition!',
+    isSold: true,
   },
 
   {
-    make: 'Fender',
-    model: 'Stratocaster',
-    year: '1990',
-    price: '1800',
-    path: '/',
-    image:
-      'https://therockinn.com/cdn/shop/files/MG_9974_0b779385-019c-449f-99c7-aeae2a8265f0_1024x1024.jpg?v=1705973038',
+    type: 'ACOUSTIC',
+    make: 'Gibson',
+    model: 'j45',
+    year: 1945,
+    price: 55.0,
+    description: 'Extremely rare, one left in the entire world',
+    isSold: false,
   },
 ];
+
+module.exports = {
+  user,
+  guitars,
+};
