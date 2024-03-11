@@ -28,6 +28,7 @@ export default function Header() {
               <div>
                 <Link href='/'>
                   <Image
+                    priority
                     src={companyLogo}
                     alt='Company logo'
                     width={120}

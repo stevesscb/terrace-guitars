@@ -1,37 +1,45 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import classes from './navbar.module.scss';
 
 const navLinks = [
   {
     label: 'Home',
-    path: '/',
+    href: '/',
   },
   {
     label: 'About',
-    path: '/about',
+    href: '/about',
   },
   {
     label: 'Contact',
-    path: '/contact',
+    href: '/contact',
   },
   {
     label: 'Login',
-    path: '/login',
+    href: '/login',
   },
   {
     label: 'logout',
-    path: '/',
+    href: '/',
   },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <nav className={classes.nav}>
       <ul>
         {navLinks.map((link, index) => (
           <li key={index}>
-            <Link href={link.path}>{link.label}</Link>
+            <Link
+              href={link.href}
+              className={pathname === link.href ? classes.active : null}
+            >
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>

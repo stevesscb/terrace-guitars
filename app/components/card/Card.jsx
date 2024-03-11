@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import placeHolder from '@/public/strat.webp';
+
 import classes from './card.module.scss';
 
 export default function Card({ data }) {
-  const { path, image, make, model, year, price } = data;
+  const { id, make, model, year, price } = data;
 
   return (
     <div className={classes.card}>
-      <Link href={path}>
+      <Link href={`guitars/${id}`}>
         <Image
-          src={image}
+          src={placeHolder}
           alt='alt message'
           height={400}
           width={400}
