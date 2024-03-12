@@ -1,16 +1,11 @@
 import Link from 'next/link';
 
+import Wrapper from '@/app/ui/wrapper/Wrapper';
+
 export const metadata = {
   title: 'Available guitars',
 };
 
 export default function Layout({ children }) {
-  return (
-    <>
-      {children}
-      <button>
-        <Link href='../'>Return</Link>
-      </button>
-    </>
-  );
+  return <Wrapper>{children}</Wrapper>;
 }

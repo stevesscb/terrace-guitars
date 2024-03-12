@@ -35,7 +35,9 @@ export default function Header() {
                     height={120}
                   />
                 </Link>
-                <h1 className={perm.className}>Terrace Guitars</h1>
+                <Link href='/'>
+                  <h1 className={perm.className}>Terrace Guitars</h1>
+                </Link>
               </div>
               <Navbar />
             </div>
