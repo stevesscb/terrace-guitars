@@ -5,8 +5,8 @@ import classes from './navbar.module.scss';
 
 const navLinks = [
   {
-    label: 'Home',
-    href: '/',
+    label: 'Guitars',
+    href: '/guitars',
   },
   {
     label: 'About',

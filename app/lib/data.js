@@ -4,10 +4,8 @@ import { unstable_noStore as noStore } from 'next/cache';
 const prisma = new PrismaClient();
 
 export async function fetchGuitars() {
-  noStore();
-
   try {
-    console.log('Fetching revenue data...');
+    console.log('Fetching all guitars...');
 
     const data = await prisma.guitar.findMany();
 
