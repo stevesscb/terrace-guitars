@@ -36,6 +36,10 @@ body {
   background: var(--body-bg);
 }
 
+main {
+  min-height: 60dvh;
+}
+
 h1,
 h3,
 h4 {
@@ -57,7 +61,7 @@ button {
 }
 
 section {
-  padding: 10rem;
+  padding: 8rem 1.5rem;
 
   @media only screen and (max-width: $bp-medium) {
     padding: 8rem 1.5rem;
@@ -70,6 +74,10 @@ p {
 }
 
 .page {
-  padding: 1.5rem;
   min-height: 60dvh;
+}
+
+.full-width-bg {
+  box-shadow: 0 0 0 100vmax var(--color-light);
+  clip-path: inset(0 -100vmax);
 }

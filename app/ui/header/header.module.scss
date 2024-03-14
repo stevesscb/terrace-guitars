@@ -9,6 +9,10 @@
 .header {
   position: relative;
 
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
   .outer {
     position: absolute;
     z-index: 1;

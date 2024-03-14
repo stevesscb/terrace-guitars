@@ -1,10 +1,10 @@
-import Navbar from '@/app/ui/navbar/Navbar';
+import Link from 'next/link';
 
 export default function ProfilePage() {
   return (
     <>
-      <Navbar />
       <h1>Profile page</h1>
+      <Link href='profile/guitars'>guitars</Link>
     </>
   );
 }

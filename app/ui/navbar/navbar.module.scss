@@ -1,6 +1,10 @@
 .nav {
   font-size: var(--font-large);
 
+  .loggedIn {
+    display: none;
+  }
+
   ul {
     list-style: none;
 
