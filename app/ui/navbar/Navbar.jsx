@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -25,6 +27,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <nav className={classes.nav}>

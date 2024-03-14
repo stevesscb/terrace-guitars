@@ -1,3 +1,10 @@
+import Navbar from '@/app/ui/navbar/Navbar';
+
 export default function ProfilePage() {
-  return <h1>Profile page</h1>;
+  return (
+    <>
+      <Navbar />
+      <h1>Profile page</h1>
+    </>
+  );
 }
