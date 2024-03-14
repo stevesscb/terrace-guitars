@@ -1,6 +1,6 @@
 const user = {
-  username: 'terrace guitars',
-  email: 'terrace@test.com',
+  username: 'admin',
+  email: 'admin@admin.com',
   passwordHash: 'password',
 };
 

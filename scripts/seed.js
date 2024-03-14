@@ -1,15 +1,19 @@
 const { PrismaClient } = require('@prisma/client');
 const { user } = require('../app/lib/placeholder-data.js');
 const { guitars } = require('../app/lib/placeholder-data.js');
+const bcrypt = require('bcrypt');
 
 const prisma = new PrismaClient();
 
 async function main() {
+  const hashedPassword = await bcrypt.hash(user.passwordHash, 10);
+  console.log(hashedPassword);
+
   await prisma.user.create({
     data: {
       username: user.username,
       email: user.email,
-      passwordHash: user.passwordHash,
+      passwordHash: hashedPassword,
       guitars: {
         createMany: {
           data: guitars,

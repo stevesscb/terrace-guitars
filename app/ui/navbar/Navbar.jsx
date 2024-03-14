@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import classes from './navbar.module.scss';
+import SignOut from '@/app/components/buttons/Signout';
 
 const navLinks = [
   {
@@ -19,10 +20,6 @@ const navLinks = [
   {
     label: 'Login',
     href: '/login',
-  },
-  {
-    label: 'logout',
-    href: '/',
   },
 ];
 
@@ -42,6 +39,9 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
+        <li>
+          <SignOut />
+        </li>
       </ul>
     </nav>
   );
