@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Container from '@/app/ui/container/Container';
 import Navbar from '@/app/ui/navbar/Navbar';
 import Slider from '@/app/components/slider/Slider';
 
@@ -21,30 +20,28 @@ export default function Header() {
 
   return (
     <div className={classes.hero}>
-      <Container>
-        <header className={classes.header}>
-          <div className={classes.outer}>
-            <div className={classes.inner}>
-              <div>
-                <Link href='/'>
-                  <Image
-                    priority
-                    src={companyLogo}
-                    alt='Company logo'
-                    width={120}
-                    height={120}
-                  />
-                </Link>
-                <Link href='/'>
-                  <h1 className={perm.className}>Terrace Guitars</h1>
-                </Link>
-              </div>
-              <Navbar />
+      <header className={classes.header}>
+        <div className={classes.outer}>
+          <div className={classes.inner}>
+            <div>
+              <Link href='/'>
+                <Image
+                  priority
+                  src={companyLogo}
+                  alt='Company logo'
+                  width={120}
+                  height={120}
+                />
+              </Link>
+              <Link href='/'>
+                <h1 className={perm.className}>Terrace Guitars</h1>
+              </Link>
             </div>
+            <Navbar />
           </div>
-          {pathName === '/' && <Slider />}
-        </header>
-      </Container>
+        </div>
+        {pathName === '/' && <Slider />}
+      </header>
     </div>
   );
 }

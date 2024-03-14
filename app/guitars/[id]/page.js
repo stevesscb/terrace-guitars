@@ -12,7 +12,7 @@ export default async function Page({ params }) {
   const guitar = await fetchGuitar(Number(params.id));
 
   return (
-    <div className={`${classes['guitar-page']} page`}>
+    <div className={classes['guitar-page']}>
       <TwoColumnGrid>
         <div className={classes.image}>
           <Image

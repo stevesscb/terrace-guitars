@@ -20,19 +20,32 @@ const navLinks = [
     href: '/contact',
   },
   {
-    label: 'Login',
+    label: 'Admin',
     href: '/login',
+  },
+];
+
+const adminLinks = [
+  {
+    label: 'My listings',
+    href: 'profile/guitars',
   },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log(pathname);
+  const isLoggedIn = pathname.startsWith('/profile');
+
+  let links = navLinks;
+
+  if (isLoggedIn) {
+    links = adminLinks;
+  }
 
   return (
     <nav className={classes.nav}>
       <ul>
-        {navLinks.map((link, index) => (
+        {links.map((link, index) => (
           <li key={index}>
             <Link
               href={link.href}
@@ -42,9 +55,11 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
-        <li>
-          <SignOut />
-        </li>
+        {isLoggedIn && (
+          <li>
+            <SignOut />
+          </li>
+        )}
       </ul>
     </nav>
   );

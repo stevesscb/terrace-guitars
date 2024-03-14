@@ -36,7 +36,7 @@ export default function LoginForm() {
       <div>
         {errorMessage && (
           <>
-            <p>{errorMessage}</p>
+            <p className={classes.error}>{errorMessage}</p>
           </>
         )}
       </div>
