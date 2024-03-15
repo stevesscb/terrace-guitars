@@ -4,7 +4,7 @@ export default function ProfilePage() {
   return (
     <>
       <h1>Profile page</h1>
-      <Link href='profile/guitars'>guitars</Link>
+      <Link href='/profile/guitars'>guitars</Link>
     </>
   );
 }
