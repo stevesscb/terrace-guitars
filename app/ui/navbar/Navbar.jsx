@@ -8,6 +8,10 @@ import SignOut from '@/app/components/buttons/Signout';
 
 const navLinks = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'Guitars',
     href: '/guitars',
   },
@@ -28,7 +32,7 @@ const navLinks = [
 const adminLinks = [
   {
     label: 'My listings',
-    href: 'profile/guitars',
+    href: '/profile/guitars',
   },
 ];
 

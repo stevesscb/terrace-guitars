@@ -7,7 +7,7 @@ import classes from './login.module.scss';
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
-  console.log(errorMessage);
+  console.log(!errorMessage);
 
   return (
     <form action={dispatch} className={classes['login-form']}>
@@ -19,6 +19,7 @@ export default function LoginForm() {
           type='email'
           name='email'
           placeholder='Email'
+          className={errorMessage ? classes.error : null}
           required
         />
       </div>
@@ -31,12 +32,13 @@ export default function LoginForm() {
           name='password'
           placeholder='Password'
           required
+          className={errorMessage ? classes.error : null}
         />
       </div>
       <div>
         {errorMessage && (
           <>
-            <p className={classes.error}>{errorMessage}</p>
+            <p className={classes.errorMessage}>{errorMessage}</p>
           </>
         )}
       </div>
