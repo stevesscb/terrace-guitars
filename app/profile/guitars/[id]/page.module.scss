@@ -1,0 +1,64 @@
+.guitar-page {
+  min-height: 60dvh;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .description {
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+
+    p {
+      margin: 1.5rem 0;
+    }
+
+    .type {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-size: var(--font-main-heading);
+      font-weight: 500;
+    }
+
+    .price {
+      font-weight: 500;
+    }
+
+    .sold,
+    .available {
+      font-weight: 600;
+      width: fit-content;
+      padding: 1rem 1.5rem;
+      border-radius: 20px;
+    }
+
+    .available {
+      background: green;
+      color: var(--color-white);
+    }
+
+    .sold {
+      background: red;
+      color: var(--color-white);
+    }
+
+    button {
+      margin: 2rem 0;
+    }
+  }
+}

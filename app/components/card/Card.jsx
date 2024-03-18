@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -19,6 +20,14 @@ export default function Card({ data }) {
     isSold: data.isSold,
   });
 
+  const pathname = usePathname();
+
+  let href = 'guitars/';
+
+  if (pathname.startsWith('/profile')) {
+    href = '/profile/guitars/';
+  }
+
   useEffect(() => {
     setCardData({
       id: data.id,
@@ -32,7 +41,7 @@ export default function Card({ data }) {
 
   return (
     <div className={classes.card}>
-      <Link href={`guitars/${cardData.id}`}>
+      <Link href={`${href + cardData.id}`}>
         <Image
           src={placeHolder}
           alt='alt message'
