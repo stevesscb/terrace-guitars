@@ -1,5 +1,7 @@
 import { signOut } from '@/auth';
 
+import classes from './signout.module.scss';
+
 export default function SignOut() {
   return (
     <form
@@ -7,7 +9,9 @@ export default function SignOut() {
         await signOut();
       }}
     >
-      <button type='submit'>Sign out</button>
+      <button type='submit' className={classes.signOut}>
+        Sign out
+      </button>
     </form>
   );
 }

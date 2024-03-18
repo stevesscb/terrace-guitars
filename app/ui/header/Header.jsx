@@ -35,6 +35,7 @@ export default function Header() {
               </Link>
               <Link href='/'>
                 <h1 className={perm.className}>Terrace Guitars</h1>
+                {pathName.startsWith('/profile') && <h2>ADMIN PANEL</h2>}
               </Link>
             </div>
             <Navbar />

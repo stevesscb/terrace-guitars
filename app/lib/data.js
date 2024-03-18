@@ -43,20 +43,3 @@ export async function fetchGuitar(id) {
     throw new Error();
   }
 }
-
-export async function loginUser(user) {
-  console.log('data.js', user);
-  try {
-    const response = await prisma.user.findUnique({
-      where: {
-        email: user.email,
-        passwordHash: user.passwordHash,
-      },
-    });
-
-    return response;
-  } catch (error) {
-    console.log('Authentication error', error);
-    throw new Error();
-  }
-}

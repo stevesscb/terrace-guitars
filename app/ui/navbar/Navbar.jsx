@@ -32,7 +32,11 @@ const navLinks = [
 const adminLinks = [
   {
     label: 'My listings',
-    href: '/profile/guitars',
+    href: '/profile/',
+  },
+  {
+    label: 'Add posting',
+    href: '/profile/guitars/create',
   },
 ];
 
