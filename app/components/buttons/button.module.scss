@@ -1,0 +1,17 @@
+.button {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: var(--font-normal);
+  width: fit-content;
+  font-family: inherit;
+  transition: all 0.4s ease;
+
+  padding: 5px 7px;
+  border-radius: 5px;
+  margin: 1rem;
+
+  &:hover {
+    color: var(--color-light);
+    background: var(--color-dark-hover);
+  }
+}

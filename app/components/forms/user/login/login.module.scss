@@ -1,0 +1,19 @@
+.login-form {
+  background: var(--color-light);
+  font-size: var(--font-normal);
+  padding: 2rem;
+  border-radius: 5px;
+  width: 40rem;
+
+  .title {
+    font-size: var(--font-large);
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .errorMessage {
+    color: red;
+  }
+}

@@ -1,0 +1,23 @@
+.create-guitar-form {
+  min-width: 60rem;
+  padding: 2rem;
+  border-radius: 5px;
+  background: var(--color-light);
+  font-size: var(--font-normal);
+
+  .title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-size: var(--font-large);
+    font-weight: 500;
+    font-style: inherit;
+    letter-spacing: 2px;
+  }
+
+  .type-select * {
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}

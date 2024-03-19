@@ -1,9 +1,13 @@
-const { PrismaClient } = require('@prisma/client');
-import { unstable_noStore as noStore } from 'next/cache';
+'use server';
 
-const prisma = new PrismaClient();
+import { unstable_noStore as noStore } from 'next/cache';
+import handleErrors from './handle-errors';
+import prisma from './prisma';
+import * as yup from 'yup';
 
 export async function fetchGuitars() {
+  noStore();
+
   try {
     console.log('Fetching all guitars...');
 
@@ -42,4 +46,33 @@ export async function fetchGuitar(id) {
     console.log('Database error:', error);
     throw new Error();
   }
+}
+
+export async function createGuitar(prevState, formData) {
+  const rawFormData = Object.fromEntries(formData);
+
+  const createSchema = yup.object({
+    type: yup.string().required(),
+    make: yup.string().required(),
+    model: yup.string().required(),
+    year: yup.number(),
+    price: yup.number().min(0.01).required(),
+    description: yup.string().required(),
+    isSold: yup.boolean(),
+    date: yup.date(),
+  });
+
+  const verifiedData = await createSchema.validate(rawFormData, {
+    abortEarly: false,
+    stripUnknown: true,
+  });
+
+  try {
+    const data = await prisma.guitar.create({
+      data: {
+        ...verifiedData,
+      },
+    });
+    // console.log('New guitar created:', data);
+  } catch (error) {}
 }
