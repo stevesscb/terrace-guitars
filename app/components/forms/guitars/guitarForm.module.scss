@@ -1,0 +1,51 @@
+.guitar-form {
+  min-width: 60rem;
+  padding: 2rem;
+  border-radius: 5px;
+  background: var(--color-light);
+  font-size: var(--font-normal);
+
+  ::placeholder {
+    font-family: inherit;
+    font-style: italic;
+  }
+
+  textarea {
+    font-family: inherit;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-size: var(--font-large);
+    font-weight: 500;
+    font-style: inherit;
+    letter-spacing: 2px;
+  }
+
+  .type-select * {
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .errorContainer {
+    margin-left: 1rem;
+
+    .errorMessage {
+      color: red;
+      font-style: italic;
+      margin: 1rem 0;
+
+      &::before {
+        content: '*';
+        margin-right: 1px;
+      }
+
+      &::after {
+        content: '.';
+      }
+    }
+  }
+}

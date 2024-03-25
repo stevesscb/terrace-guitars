@@ -35,7 +35,7 @@ const adminLinks = [
     href: '/profile/',
   },
   {
-    label: 'Add posting',
+    label: 'Add listing',
     href: '/profile/guitars/create',
   },
 ];
