@@ -6,15 +6,15 @@ import { useFormState, useFormStatus } from 'react-dom';
 import Input from '@/app/components/forms/inputs/Input';
 import TextArea from '../../inputs/TextArea';
 import Button from '@/app/components/buttons/Button';
-import { createGuitar } from '@/app/lib/data';
+import { createGuitar } from '@/app/lib/actions';
 
 import classes from './createGuitarForm.module.scss';
 
 export default function CreateGuitarForm() {
-  const [errorMessage, dispatch] = useFormState(createGuitar, undefined);
+  const [errorMessages, dispatch] = useFormState(createGuitar, undefined);
   const { pending } = useFormStatus();
 
-  // console.log(errorMessage);
+  // console.log(errorMessages);
 
   return (
     <form action={dispatch} className={classes['create-guitar-form']}>
@@ -26,7 +26,8 @@ export default function CreateGuitarForm() {
           label='Electric'
           name='type'
           value='ELECTRIC'
-          error={errorMessage}
+          error={errorMessages}
+          checked
         />
         <Input
           type='radio'
@@ -34,7 +35,7 @@ export default function CreateGuitarForm() {
           label='Acoustic'
           name='type'
           value='ACOUSTIC'
-          error={errorMessage}
+          error={errorMessages}
         />
       </div>
       <Input
@@ -42,14 +43,16 @@ export default function CreateGuitarForm() {
         id='make'
         label='Make'
         name='make'
-        error={errorMessage}
+        placeHolder='Fender'
+        error={errorMessages}
       />
       <Input
         type='text'
         id='model'
         label='Model'
         name='model'
-        error={errorMessage}
+        placeHolder='Stratocaster'
+        error={errorMessages}
       />
       <Input
         type='text'
@@ -57,17 +60,25 @@ export default function CreateGuitarForm() {
         label='Year'
         name='year'
         maxLength='4'
-        error={errorMessage}
+        placeHolder='1990'
+        error={errorMessages}
       />
       <Input
         type='text'
         id='price'
-        label='Price'
+        label='Price (USD)'
         name='price'
         maxLength='6'
-        error={errorMessage}
+        placeHolder='$1200'
+        error={errorMessages}
       />
-      <TextArea id='description' label='Description' name='description' />
+      <TextArea
+        id='description'
+        label='Description'
+        name='description'
+        placeHolder='Detailed description on the guitar...'
+        error={errorMessages}
+      />
 
       {/* <FormControlLabel
         control={<Switch defaultChecked />}
@@ -76,12 +87,11 @@ export default function CreateGuitarForm() {
         name='isSold'
         value='true'
       /> */}
-      <div>
-        {errorMessage && (
-          <>
-            <p className={classes.errorMessage}>{errorMessage}</p>
-          </>
-        )}
+      <div className={classes.errorContainer}>
+        {errorMessages &&
+          errorMessages.map((error) => (
+            <p className={classes.errorMessage}>{error}</p>
+          ))}
       </div>
       <Button aria-disabled={pending} label='create' />
     </form>

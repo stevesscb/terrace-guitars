@@ -1,18 +1,28 @@
-import mapErrors from './map-errors.js';
-
-const handleErrors = (res, err) => {
-  switch (err.constructor.name) {
+export default function handleErrors(error) {
+  switch (error.constructor.name) {
     case 'PrismaClientKnownRequestError':
-      if (err.code === 'P2025') return res.status(404).json(err.meta.cause);
-      return res.status(400).json(err);
+      return 'Prisma error';
     case 'NotFoundError':
-      return res.status(404).json('Entry Not Found');
+      return 'Not found error';
     case 'ValidationError':
-      return res.status(406).json(mapErrors(err));
-    default:
-      console.log(err);
-      return res.status(400).json(err);
-  }
-};
+      let errorMessages = [];
 
-export default handleErrors;
+      error.inner.forEach(({ path, errors: [msg] }) => {
+        console.log(msg);
+
+        if (path === 'year') {
+          msg = 'Please enter a  year (numbers only) eg: 1997.';
+        }
+
+        if (path === 'price') {
+          msg = 'Please enter a price (numbers only)';
+        }
+
+        errorMessages.push(msg);
+      });
+
+      return errorMessages;
+    default:
+      return 'Server error';
+  }
+}

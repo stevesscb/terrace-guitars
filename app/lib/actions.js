@@ -1,6 +1,12 @@
 'use server';
-import { signIn } from '@/auth';
+
 import { AuthError } from 'next-auth';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { signIn } from '@/auth';
+import * as yup from 'yup';
+import prisma from './prisma';
+import handleErrors from './handle-errors';
 
 export async function authenticate(prevState, formData) {
   try {
@@ -16,4 +22,40 @@ export async function authenticate(prevState, formData) {
     }
     throw error;
   }
+}
+
+export async function createGuitar(prevState, formData) {
+  const rawFormData = Object.fromEntries(formData);
+
+  const FormSchema = yup.object({
+    type: yup.string().required(),
+    make: yup.string().required(),
+    model: yup.string().required(),
+    year: yup.number().required('Please enter a a date (numbers only)'),
+    price: yup
+      .number()
+      .min(0.01)
+      .required('Please enter an amount greater than $0'),
+    description: yup.string().required(),
+    isSold: yup.boolean(),
+    date: yup.date(),
+  });
+
+  try {
+    const verifiedData = await FormSchema.validate(rawFormData, {
+      abortEarly: false,
+      stripUnknown: true,
+    });
+
+    const newGuitar = await prisma.guitar.create({
+      data: {
+        ...verifiedData,
+      },
+    });
+    console.log('New guitar created!:', newGuitar);
+  } catch (error) {
+    return handleErrors(error);
+  }
+  revalidatePath('/profile');
+  redirect('/profile');
 }
