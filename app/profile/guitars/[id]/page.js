@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { fetchGuitar } from '@/app/lib/data';
 
 import TwoColumnGrid from '@/app/ui/grid/TwoColumnGrid';
 import BackButton from '@/app/components/buttons/BackButton';
 import placeHolder from '@/public/strat.webp';
+import DeleteButton from '@/app/components/buttons/DeleteButton';
 
 import classes from './page.module.scss';
 
@@ -36,6 +38,8 @@ export default async function Page({ params }) {
           )}
           <p className={classes.details}>{guitar.description}</p>
           <BackButton />
+          <Link href={`/profile/guitars/${guitar.id}/edit/`}>Edit guitar</Link>
+          <DeleteButton id={guitar.id} />
         </div>
       </TwoColumnGrid>
     </div>
