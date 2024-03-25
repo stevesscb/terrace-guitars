@@ -5,11 +5,7 @@ export default function Input(props) {
   return (
     <div className={`${classes['input-group']}`}>
       <label htmlFor={props.id}>{props.label}</label>
-      <input
-        {...props}
-        required
-        className={props.error ? classes.error : null}
-      />
+      <input {...props} className={props.error ? classes.error : null} />
     </div>
   );
 }
