@@ -1,0 +1,103 @@
+.guitar-page {
+  min-height: 65dvh;
+  padding: 1.5rem;
+  font-size: var(--font-normal);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .description {
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    min-width: 60rem;
+
+    .caption {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 1.5rem 0;
+    }
+
+    .type {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-size: var(--font-main-heading);
+      font-weight: 500;
+    }
+
+    .price {
+      font-weight: 500;
+    }
+
+    .sold,
+    .available {
+      width: fit-content;
+      font-weight: 600;
+      padding: 1rem 1.5rem;
+      border-radius: 20px;
+    }
+
+    .available {
+      background: var(--color-success);
+      color: var(--color-white);
+    }
+
+    .sold {
+      background: var(--color-danger);
+      color: var(--color-white);
+    }
+
+    .cta {
+      margin-top: 4rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      button:first-child {
+        border: none;
+        background: var(--color-light);
+
+        &:hover {
+          background: var(--color-light-hover);
+        }
+      }
+
+      * {
+        cursor: pointer;
+        height: auto;
+        padding: 1.5rem 3rem;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+      }
+
+      .edit {
+        margin: auto 0;
+        background: var(--color-success);
+        color: var(--color-white);
+
+        &:hover {
+          background: var(--color-success-hover);
+        }
+      }
+    }
+  }
+}

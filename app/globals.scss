@@ -9,7 +9,17 @@
   --color-dark-hover: #334155;
 
   --color-light: #d6d3d1;
-  --color-light-hover: #f5f5f4;
+  --color-light-hover: #e7e5e4;
+
+  // --color-light-hover: #f5f5f4;
+  --color-light-2: #e2e8f0;
+  --color-light-3: #cbd5e1;
+
+  --color-danger: #dc2626;
+  --color-danger-hover: #ef4444;
+
+  --color-success: #16a34a;
+  --color-success-hover: #22c55e;
 
   --font-main-heading: 2.6rem;
   --font-large: 1.6rem;
@@ -37,7 +47,7 @@ body {
 }
 
 main {
-  min-height: 60dvh;
+  min-height: 65dvh;
 }
 
 h1,

@@ -2,7 +2,7 @@
   min-width: 60rem;
   padding: 2rem;
   border-radius: 5px;
-  background: var(--color-light);
+  background: var(--color-light-3);
   font-size: var(--font-normal);
 
   ::placeholder {
@@ -46,6 +46,40 @@
       &::after {
         content: '.';
       }
+    }
+  }
+
+  .cta {
+    margin: 2rem 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    button:first-child {
+      background: var(--color-success);
+      color: var(--color-white);
+
+      &:hover {
+        background: var(--color-success-hover);
+      }
+    }
+
+    button:nth-child(2) {
+      background: var(--color-light);
+
+      &:hover {
+        background: var(--color-light-hover);
+      }
+    }
+
+    * {
+      height: auto;
+      cursor: pointer;
+      border: none;
+      transition: all 0.4s ease;
+
+      padding: 1rem 3rem;
+      border-radius: 5px;
     }
   }
 }

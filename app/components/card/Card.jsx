@@ -15,8 +15,6 @@ export default function Card({ data }) {
     id: data.id,
     type: data.type,
     make: data.make,
-    model: data.model,
-    year: data.year,
     price: data.price,
     isSold: data.isSold,
   });
@@ -34,8 +32,6 @@ export default function Card({ data }) {
       id: data.id,
       type: data.type,
       make: data.make,
-      model: data.model,
-      year: data.year,
       price: data.price,
       isSold: data.isSold,
     });
@@ -53,13 +49,21 @@ export default function Card({ data }) {
           className={classes.image}
         />
         <div className={classes.description}>
-          <p>Type: {cardData.type}</p>
-          <p>Make: {cardData.make}</p>
-          {/* <p>Model: {cardData.model}</p> */}
-          {/* <p>Year: {cardData.year}</p> */}
-          <p>Price: ${cardData.price}</p>
-          {cardData.isSold ? <p>Sold</p> : <p>Available</p>}
-          <p>More details...</p>
+          <p>
+            <span>Type:</span> {cardData.type}
+          </p>
+          <p>
+            <span>Make:</span> {cardData.make}
+          </p>
+          <p>
+            <span>Price:</span> ${cardData.price}
+          </p>
+          {cardData.isSold ? (
+            <p className={classes.sold}>Sold</p>
+          ) : (
+            <p className={classes.available}>Available</p>
+          )}
+          <p>Click for more details...</p>
         </div>
       </Link>
     </div>
