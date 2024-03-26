@@ -1,4 +1,4 @@
-import { FormControlLabel, Switch } from '@mui/material';
+// import { FormControlLabel, Switch } from '@mui/material';
 
 import { useEffect, useState } from 'react';
 import { fetchGuitar } from '@/app/lib/data';
@@ -8,6 +8,7 @@ import TextArea from '@/app/components/forms/inputs/TextArea';
 import Button from '@/app/components/buttons/Button';
 
 import classes from './guitarForm.module.scss';
+import BackButton from '../../buttons/BackButton';
 
 export default function GuitarForm({
   errorMessages,
@@ -27,10 +28,8 @@ export default function GuitarForm({
       };
 
       getGuitar();
-    }, [id]);
+    }, []);
   }
-
-  console.log(guitar.type === 'ELECTRIC');
 
   return (
     <form action={dispatch} className={classes['guitar-form']}>
@@ -116,7 +115,10 @@ export default function GuitarForm({
             </p>
           ))}
       </div>
-      <Button aria-disabled={pending} label={type} />
+      <div className={classes.cta}>
+        <Button aria-disabled={pending} label={type} />
+        <BackButton />
+      </div>
     </form>
   );
 }
