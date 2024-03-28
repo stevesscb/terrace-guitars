@@ -3,10 +3,11 @@
 import { AuthError } from 'next-auth';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+
 import { signIn } from '@/auth';
-import * as yup from 'yup';
 import prisma from './prisma';
 import handleErrors from './handle-errors';
+import { FormSchema } from './yup';
 
 export async function authenticate(prevState, formData) {
   try {
@@ -24,22 +25,10 @@ export async function authenticate(prevState, formData) {
   }
 }
 
-const FormSchema = yup.object({
-  type: yup.string().required(),
-  make: yup.string().required(),
-  model: yup.string().required(),
-  year: yup.number().required('Please enter a a date (numbers only)'),
-  price: yup
-    .number()
-    .min(0.01)
-    .required('Please enter an amount greater than $0'),
-  description: yup.string().required(),
-  isSold: yup.boolean(),
-  date: yup.date(),
-});
-
 export async function createGuitar(prevState, formData) {
   const rawFormData = Object.fromEntries(formData);
+  const isSoldBoolean = Boolean(rawFormData.isSold);
+  rawFormData.isSold = !isSoldBoolean;
 
   try {
     const verifiedData = await FormSchema.validate(rawFormData, {
@@ -62,6 +51,8 @@ export async function createGuitar(prevState, formData) {
 
 export async function updateGuitar(id, prevState, formData) {
   const rawFormData = Object.fromEntries(formData);
+  const isSoldBoolean = Boolean(rawFormData.isSold);
+  rawFormData.isSold = !isSoldBoolean;
 
   try {
     const verifiedData = await FormSchema.validate(rawFormData, {

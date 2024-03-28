@@ -5,7 +5,7 @@
   background: var(--color-light-2);
 
   &:hover {
-    transform: scale(1.01);
+    transform: scale(1.015);
   }
 
   .image {
@@ -37,6 +37,7 @@
       top: 1rem;
       right: 1rem;
       padding: 4px 8px;
+      color: var(--color-white);
     }
 
     .sold {
@@ -46,7 +47,6 @@
     .available {
       text-transform: uppercase;
       background: var(--color-success);
-      color: var(--color-white);
     }
   }
 }

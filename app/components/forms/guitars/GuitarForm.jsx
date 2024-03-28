@@ -1,4 +1,4 @@
-// import { FormControlLabel, Switch } from '@mui/material';
+import { FormControlLabel, Switch } from '@mui/material';
 
 import { useEffect, useState } from 'react';
 import { fetchGuitar } from '@/app/lib/data';
@@ -101,12 +101,15 @@ export default function GuitarForm({
         defaultValue={guitar.description}
       />
 
-      {/* <FormControlLabel
-        control={<Switch defaultChecked={guitar.isSold ? false : true} />}
-        label='Available?'
-        id='isSold'
-        name='isSold'
-      /> */}
+      {guitar && (
+        <FormControlLabel
+          control={<Switch defaultChecked={!guitar.isSold} />}
+          label='Available?'
+          id='isSold'
+          name='isSold'
+        />
+      )}
+
       <div className={classes.errorContainer}>
         {errorMessages &&
           errorMessages.map((error, index) => (
