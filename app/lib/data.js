@@ -7,9 +7,8 @@ export async function fetchGuitars() {
 
   try {
     console.log('Fetching all guitars...');
-
     const data = await prisma.guitar.findMany();
-
+    console.log('Fetched guitars');
     return data;
   } catch (error) {
     console.log('Database error:', error);
@@ -38,6 +37,7 @@ export async function fetchGuitar(id) {
         id: Number(id),
       },
     });
+    console.log('fetched guitar!');
     return data;
   } catch (error) {
     console.log('Database error:', error);

@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default async function Page() {
-  return <AllGuitars />;
+  return <AllGuitars title='Current listings' />;
 }
