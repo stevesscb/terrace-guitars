@@ -4,6 +4,7 @@ export default function Button(props) {
   return (
     <button className={classes.button} {...props}>
       {props.label}
+      {props.children}
     </button>
   );
 }

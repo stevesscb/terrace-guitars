@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import TwoColumnGrid from '@/app/ui/grid/TwoColumnGrid';
+import Button from '@/app/components/buttons/Button';
 
 import about from '@/public/about-homepage.webp';
 
@@ -31,9 +32,9 @@ export default function About() {
             then got a job in a music shop to pay off the debts and eight years
             later ... "
           </p>
-          <button>
+          <Button>
             <Link href='/about'>READ MORE</Link>
-          </button>
+          </Button>
         </div>
       </TwoColumnGrid>
     </section>

@@ -1,0 +1,49 @@
+@import '@/app/animations.scss';
+
+.guitar-page {
+  min-height: 65dvh;
+  padding: 1.5rem;
+  font-size: var(--font-normal);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image {
+    height: 600px;
+    width: 400px;
+    border-radius: 5px;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
+
+  .description {
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    min-width: 60rem;
+
+    span {
+      display: block;
+      border-radius: 20px;
+      margin: 2rem;
+      height: 2.5rem;
+      width: 50%;
+      animation: skeleton-loading 1s linear infinite alternate;
+    }
+
+    .cta {
+      margin-top: 4rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        margin-left: 2rem;
+        height: 5rem;
+        width: 12rem;
+        border-radius: 20px;
+        animation: skeleton-loading 1s linear infinite alternate;
+      }
+    }
+  }
+}

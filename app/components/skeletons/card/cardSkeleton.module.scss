@@ -1,0 +1,42 @@
+@import '@/app/animations.scss';
+
+.card {
+  border-radius: 5px;
+  width: 300px;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.image {
+  height: 400px;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.description {
+  position: relative;
+  height: 120px;
+  padding: 1rem;
+
+  .isSold {
+    position: absolute;
+    border-radius: 5px;
+    top: 1rem;
+    right: 1rem;
+    height: 20px;
+    width: 25%;
+  }
+
+  span {
+    display: block;
+    border-radius: 20px;
+    width: 60%;
+    height: 1rem;
+    background: rgb(206, 201, 201);
+    margin: 1rem;
+
+    &:first-child() {
+      margin-top: 0;
+    }
+  }
+}
