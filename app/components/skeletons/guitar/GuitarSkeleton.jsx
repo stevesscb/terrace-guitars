@@ -2,7 +2,7 @@ import TwoColumnGrid from '@/app/ui/grid/TwoColumnGrid';
 
 import classes from './guitarSkeleton.module.scss';
 
-export default function GuitarSkeleton() {
+export default function GuitarSkeleton({ type }) {
   return (
     <div className={classes['guitar-page']}>
       <TwoColumnGrid>
@@ -15,8 +15,12 @@ export default function GuitarSkeleton() {
           <span></span>
           <div className={classes.cta}>
             <div></div>
-            <div></div>
-            <div></div>
+            {type === 'admin' && (
+              <>
+                <div></div>
+                <div></div>
+              </>
+            )}
           </div>
         </div>
       </TwoColumnGrid>
