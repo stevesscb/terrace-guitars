@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -6,9 +7,9 @@ import { usePathname } from 'next/navigation';
 import TwoColumnGrid from '@/app/ui/grid/TwoColumnGrid';
 import BackButton from '@/app/components/buttons/BackButton';
 import placeHolder from '@/public/strat.webp';
-import DeleteButton from '@/app/components/buttons/DeleteButton';
 
 import classes from './guitarPage.module.scss';
+import Modal from '@/app/components/modal/Modal';
 
 export default function GuitarPage({ guitar }) {
   const pathname = usePathname();
@@ -56,7 +57,12 @@ export default function GuitarPage({ guitar }) {
                 >
                   Edit listing
                 </Link>
-                <DeleteButton id={guitar.id} />
+                <Modal
+                  className={classes.delete}
+                  id={guitar.id}
+                  label='Delete'
+                  title='Are you sure you want to delete this listing?'
+                />
               </>
             )}
           </div>
