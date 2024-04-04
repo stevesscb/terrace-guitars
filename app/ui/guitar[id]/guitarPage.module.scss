@@ -73,8 +73,18 @@
       display: flex;
       justify-content: space-between;
 
-      button:first-child {
+      * {
+        cursor: pointer;
+        height: auto;
+        padding: 1.5rem 3rem;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+        font-size: var(--font-normal);
+        text-transform: capitalize;
         border: none;
+      }
+
+      button:first-child {
         background: var(--color-light);
 
         &:hover {
@@ -82,21 +92,23 @@
         }
       }
 
-      * {
-        cursor: pointer;
-        height: auto;
-        padding: 1.5rem 3rem;
-        border-radius: 15px;
-        transition: all 0.4s ease;
-      }
-
       .edit {
-        margin: auto 0;
+        margin: auto;
+        padding: 2rem 3rem;
         background: var(--color-success);
         color: var(--color-white);
 
         &:hover {
           background: var(--color-success-hover);
+        }
+      }
+
+      button:last-child {
+        color: var(--color-white);
+        background: var(--color-danger);
+
+        &:hover {
+          background: var(--color-danger-hover);
         }
       }
     }

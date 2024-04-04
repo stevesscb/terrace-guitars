@@ -5,7 +5,6 @@ import classes from './deleteButton.module.scss';
 
 export default function DeleteButton({ id }) {
   function handleDelete() {
-    alert('Are you sure you want to delete this guitar? ');
     deleteGuitar(id);
   }
 

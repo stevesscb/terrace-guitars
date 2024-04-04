@@ -20,7 +20,9 @@ export async function fetchLatestGuitars() {
   noStore();
 
   try {
+    console.log('fetching latest guitars');
     const data = await prisma.guitar.findMany({ take: 4 });
+    console.log('fetched latest guitars');
     return data;
   } catch (error) {
     console.log('Database error:', error);
@@ -32,12 +34,14 @@ export async function fetchGuitar(id) {
   noStore();
 
   try {
+    console.log('fetching guitar');
+
     const data = await prisma.guitar.findUnique({
       where: {
         id: Number(id),
       },
     });
-    console.log('fetched guitar!');
+    console.log('fetched guitar');
     return data;
   } catch (error) {
     console.log('Database error:', error);

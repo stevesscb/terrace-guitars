@@ -55,12 +55,20 @@
     display: flex;
     justify-content: space-between;
 
+    button {
+      text-transform: uppercase;
+      font-size: var(--font-small);
+      font-weight: 400;
+      font-style: inherit;
+    }
+
     button:first-child {
       background: var(--color-success);
       color: var(--color-white);
 
       &:hover {
         background: var(--color-success-hover);
+        border: none;
       }
     }
 
