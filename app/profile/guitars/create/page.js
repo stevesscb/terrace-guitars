@@ -18,7 +18,7 @@ export default function CreateGuitarPage() {
         errorMessages={errorMessages}
         dispatch={dispatch}
         pending={pending}
-        type='create'
+        formType='create'
       />
     </div>
   );

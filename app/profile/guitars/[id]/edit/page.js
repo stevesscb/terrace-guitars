@@ -16,7 +16,7 @@ export default function EditGuitarPage() {
   return (
     <div className={classes['edit-guitar-page']}>
       <GuitarForm
-        type='update'
+        formType='update'
         title='Edit Listing'
         id={params.id}
         errorMessages={errorMessages}

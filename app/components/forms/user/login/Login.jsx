@@ -36,7 +36,7 @@ export default function LoginForm() {
           </>
         )}
       </div>
-      <Button aria-disabled={pending} label='login' />
+      <Button bg='neutral' aria-disabled={pending} label='login' />
     </form>
   );
 }

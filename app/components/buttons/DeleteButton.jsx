@@ -10,7 +10,7 @@ export default function DeleteButton({ id }) {
 
   return (
     <button className={classes.deleteBtn} onClick={handleDelete}>
-      Delete listing
+      Delete
     </button>
   );
 }

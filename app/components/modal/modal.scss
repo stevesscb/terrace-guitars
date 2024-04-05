@@ -1,7 +1,7 @@
 #alert-dialog-title {
   padding: 3rem;
-  font-size: var(--font-large);
   font-weight: 500;
+  font-size: var(--font-large);
 }
 
 #actions {
@@ -9,30 +9,4 @@
 
   display: flex;
   justify-content: space-between;
-}
-
-#btn {
-  cursor: pointer;
-  text-transform: uppercase;
-  border: none;
-  transition: all 0.4s ease;
-  border-radius: 5px;
-  font-size: var(--font-normal);
-
-  color: var(--color-black);
-  background: var(--color-light-2);
-
-  &:hover {
-    background: var(--color-light-hover);
-  }
-}
-
-#submitBtn {
-  font-size: var(--font-normal);
-  color: var(--color-white);
-  background: var(--color-success);
-
-  &:hover {
-    background: var(--color-success-hover);
-  }
 }

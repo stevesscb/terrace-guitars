@@ -8,7 +8,7 @@ export default async function AllGuitars({ title }) {
   const guitars = await fetchGuitars();
 
   return (
-    <div className='page'>
+    <div className={classes['all-guitars-page']}>
       <h1 className={classes.title}>{title}</h1>
       <div className={classes.guitars}>
         {guitars.map((guitar, index) => (

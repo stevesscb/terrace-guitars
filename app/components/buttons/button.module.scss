@@ -1,15 +1,20 @@
 .button {
   cursor: pointer;
   text-transform: capitalize;
-  font-size: var(--font-normal);
   width: fit-content;
   font-family: inherit;
+  border: none;
   transition: all 0.4s ease;
+  font-size: var(--font-normal);
+  border-radius: 20px;
+  padding: 1rem 2rem;
 
-  padding: 5px 7px;
-  border-radius: 5px;
+  button:disabled {
+    cursor: not-allowed;
+    background: gray;
 
-  &:hover {
-    background: var(--color-light-hover);
+    &:hover {
+      background: gray;
+    }
   }
 }

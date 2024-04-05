@@ -1,8 +1,10 @@
+'use client';
+
 import classes from './button.module.scss';
 
 export default function Button(props) {
   return (
-    <button className={classes.button} {...props}>
+    <button {...props} className={`${classes.button} ${props.bg}`}>
       {props.label}
       {props.children}
     </button>
