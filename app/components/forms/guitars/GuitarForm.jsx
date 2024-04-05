@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { fetchGuitar } from '@/app/lib/data';
+import { useRouter } from 'next/navigation';
 
 import Input from '@/app/components/forms/inputs/Input';
 import TextArea from '@/app/components/forms/inputs/TextArea';
-import RadioButton from '@/app/components/buttons/RadioButton';
-import BackButton from '@/app/components/buttons/BackButton';
+import SwitchButton from '@/app/components/buttons/SwitchButton';
 import Button from '@/app/components/buttons/Button';
 
 import classes from './guitarForm.module.scss';
@@ -15,11 +15,12 @@ export default function GuitarForm({
   dispatch,
   title,
   id,
-  type,
+  formType,
 }) {
   const [guitar, setGuitar] = useState('');
+  const router = useRouter();
 
-  if (type === 'update') {
+  if (formType === 'update') {
     useEffect(() => {
       const getGuitar = async () => {
         const guitar = await fetchGuitar(id);
@@ -38,9 +39,9 @@ export default function GuitarForm({
         className={classes['guitar-form']}
       >
         <h2 className={classes.title}>
-          {type === 'update' && !guitar ? 'Fetching data...' : title}
+          {formType === 'update' && !guitar ? 'Fetching data...' : title}
         </h2>
-        {type === 'update' && !guitar ? (
+        {formType === 'update' && !guitar ? (
           ''
         ) : (
           <>
@@ -110,7 +111,7 @@ export default function GuitarForm({
               error={errorMessages}
               defaultValue={guitar.description}
             />
-            <RadioButton type={type} guitar={guitar} />
+            <SwitchButton formType={formType} guitar={guitar} />
             <div className={classes.errorContainer}>
               {errorMessages &&
                 errorMessages.map((error, index) => (
@@ -120,17 +121,21 @@ export default function GuitarForm({
                 ))}
             </div>
             <div className={classes.cta}>
-              {type === 'update' ? (
+              {formType === 'update' ? (
                 <Modal
                   id='guitar-form'
-                  label='Submit'
+                  label='submit'
                   title='Do you want to publish these changes?'
                   description={false}
                 />
               ) : (
-                <Button label='Submit' />
+                <Button bg='success' label='create' />
               )}
-              <BackButton />
+              <Button
+                bg='neutral'
+                label='return'
+                onClick={() => router.back()}
+              />
             </div>
           </>
         )}

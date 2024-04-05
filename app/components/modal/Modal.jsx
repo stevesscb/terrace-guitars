@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import Button from '@/app/components/buttons/Button';
 import DeleteButton from '@/app/components/buttons/DeleteButton';
 
 import './modal.scss';
@@ -24,7 +25,11 @@ export default function Modal({ id, label, title, description }) {
 
   return (
     <>
-      <Button variant='outlined' onClick={handleClickOpen}>
+      <Button
+        bg={label === 'delete' ? 'danger' : 'success'}
+        onClick={handleClickOpen}
+        type='button'
+      >
         {label}
       </Button>
       <Dialog
@@ -42,13 +47,13 @@ export default function Modal({ id, label, title, description }) {
           </DialogContent>
         )}
         <DialogActions id='actions'>
-          <Button type='button' onClick={handleClose} id='btn'>
-            Cancel
+          <Button bg='neutral' type='button' onClick={handleClose}>
+            cancel
           </Button>
-          {label === 'Delete' ? (
+          {label === 'delete' ? (
             <DeleteButton id={id} />
           ) : (
-            <Button form={id} type='submit' id='submitBtn'>
+            <Button form={id} type='submit' bg='success'>
               {label}
             </Button>
           )}

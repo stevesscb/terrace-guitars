@@ -84,3 +84,30 @@ p {
   box-shadow: 0 0 0 100vmax var(--color-light);
   clip-path: inset(0 -100vmax);
 }
+
+// Buttons
+.neutral {
+  background: var(--color-light-2);
+
+  &:hover {
+    background: var(--color-light-hover);
+  }
+}
+
+.danger {
+  color: var(--color-white);
+  background: var(--color-danger);
+
+  &:hover {
+    background: var(--color-danger-hover);
+  }
+}
+
+.success {
+  color: var(--color-white);
+  background: var(--color-success);
+
+  &:hover {
+    background: var(--color-success-hover);
+  }
+}

@@ -1,12 +1,13 @@
 .input-group {
-  font-size: var(--font-normal);
   margin: 1rem;
+  font-size: var(--font-normal);
+
   display: flex;
   flex-direction: column;
 
   label {
-    margin: 5px 0;
     text-transform: capitalize;
+    margin: 5px 0;
 
     &:after {
       content: ':';
@@ -16,10 +17,11 @@
 
   input,
   textarea {
-    padding: 1rem;
-    border-radius: 5px;
     border: none;
     font-size: inherit;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #ffff;
   }
 
   textarea {
@@ -29,6 +31,6 @@
   }
 
   .error {
-    border: 1px solid red;
+    border: 1px solid var(--color-danger);
   }
 }

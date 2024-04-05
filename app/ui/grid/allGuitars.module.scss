@@ -1,5 +1,14 @@
 @import '@/app/variables.scss';
 
+.all-guitars-page {
+  min-height: 65dvh;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .title {
   margin: 1.5rem 0;
 }

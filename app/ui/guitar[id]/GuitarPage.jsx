@@ -3,16 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import TwoColumnGrid from '@/app/ui/grid/TwoColumnGrid';
-import BackButton from '@/app/components/buttons/BackButton';
 import placeHolder from '@/public/strat.webp';
 
-import classes from './guitarPage.module.scss';
 import Modal from '@/app/components/modal/Modal';
+
+import classes from './guitarPage.module.scss';
+import Button from '@/app/components/buttons/Button';
 
 export default function GuitarPage({ guitar }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   let admin = false;
 
@@ -33,22 +36,22 @@ export default function GuitarPage({ guitar }) {
           />
         </div>
         <div className={classes.description}>
-          <p className={classes.type}>{guitar.type}</p>
-          <p className={classes.title}>
-            {guitar.year} {guitar.make} {guitar.model}
-          </p>
-          <p className={classes.price}>Price: ${guitar.price}</p>
           {guitar.isSold ? (
             <p className={classes.sold}>Sold</p>
           ) : (
             <p className={classes.available}>Available</p>
           )}
+          <p className={classes.type}>{guitar.type}</p>
+          <p className={classes.title}>
+            {guitar.year} {guitar.make} {guitar.model}
+          </p>
+          <p className={classes.price}>Price: ${guitar.price}</p>
           <p className={classes.details}>
             <span className={classes.caption}>Description:</span>
             {guitar.description}
           </p>
           <div className={classes.cta}>
-            <BackButton />
+            <Button bg='neutral' label='Return' onClick={() => router.back()} />
             {admin && (
               <>
                 <Link
@@ -60,7 +63,7 @@ export default function GuitarPage({ guitar }) {
                 <Modal
                   className={classes.delete}
                   id={guitar.id}
-                  label='Delete'
+                  label='delete'
                   title='Are you sure you want to delete this listing?'
                 />
               </>

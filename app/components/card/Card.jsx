@@ -11,8 +11,8 @@ import classes from './card.module.scss';
 export default function Card({ data }) {
   const [cardData, setCardData] = useState({
     id: data.id,
-    type: data.type,
     make: data.make,
+    model: data.model,
     price: data.price,
     isSold: data.isSold,
   });
@@ -28,8 +28,8 @@ export default function Card({ data }) {
   useEffect(() => {
     setCardData({
       id: data.id,
-      type: data.type,
       make: data.make,
+      model: data.model,
       price: data.price,
       isSold: data.isSold,
     });
@@ -48,10 +48,10 @@ export default function Card({ data }) {
         />
         <div className={classes.description}>
           <p>
-            <span>Type:</span> {cardData.type}
+            <span>Make:</span> {cardData.make}
           </p>
           <p>
-            <span>Make:</span> {cardData.make}
+            <span>Model:</span> {cardData.model}
           </p>
           <p>
             <span>Price:</span> ${cardData.price}

@@ -1,7 +1,7 @@
 import { FormControlLabel, Switch } from '@mui/material';
 
-export default function RadioButton({ type, guitar }) {
-  if (type === 'create') {
+export default function SwitchButton({ formType, guitar }) {
+  if (formType === 'create') {
     return (
       <FormControlLabel
         control={<Switch defaultChecked={true} />}
@@ -12,7 +12,7 @@ export default function RadioButton({ type, guitar }) {
     );
   }
 
-  if (type === 'update') {
+  if (formType === 'update') {
     return (
       <>
         {guitar && (
