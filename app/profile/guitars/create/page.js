@@ -3,7 +3,7 @@
 import { useFormState, useFormStatus } from 'react-dom';
 import { createGuitar } from '@/app/lib/actions';
 
-import GuitarForm from '@/app/components/forms/guitars/GuitarForm';
+import GuitarForm from '@/app/components/form/guitars/GuitarForm';
 
 import classes from './page.module.scss';
 
