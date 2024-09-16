@@ -1,0 +1,113 @@
+@import '@/app/variables.scss';
+
+:root {
+  --body-bg: #f0f9ff;
+  --color-white: #fff;
+  --color-black: #020617;
+
+  --color-dark: #1e293b;
+  --color-dark-hover: #334155;
+
+  --color-light: #d6d3d1;
+  --color-light-hover: #e7e5e4;
+
+  --color-light-2: #e2e8f0;
+  --color-light-3: #cbd5e1;
+
+  --color-danger: #dc2626;
+  --color-danger-hover: #ef4444;
+
+  --color-success: #16a34a;
+  --color-success-hover: #22c55e;
+
+  --font-main-heading: 2.6rem;
+  --font-large: 1.6rem;
+  --font-normal: 1.4rem;
+  --font-small: 1.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* 10px = 1rem  */
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--body-bg);
+}
+
+main {
+  min-height: 65dvh;
+}
+
+h1,
+h3,
+h4 {
+  font-size: var(--font-main-heading);
+  font-weight: 400;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-style: inherit;
+}
+
+section {
+  padding: 8rem 1.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 8rem 1.5rem;
+  }
+}
+
+p {
+  font-size: var(--font-normal);
+  font-weight: 300;
+}
+
+.page {
+  min-height: 60dvh;
+  padding: 1.5rem;
+}
+
+.full-width-bg {
+  box-shadow: 0 0 0 100vmax var(--color-light);
+  clip-path: inset(0 -100vmax);
+}
+
+// Buttons
+.neutral {
+  background: var(--color-light-2);
+
+  &:hover {
+    background: var(--color-light-hover);
+  }
+}
+
+.danger {
+  color: var(--color-white);
+  background: var(--color-danger);
+
+  &:hover {
+    background: var(--color-danger-hover);
+  }
+}
+
+.success {
+  color: var(--color-white);
+  background: var(--color-success);
+
+  &:hover {
+    background: var(--color-success-hover);
+  }
+}

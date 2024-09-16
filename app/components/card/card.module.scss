@@ -1,0 +1,54 @@
+.card {
+  transition: all 0.6s ease;
+  border-radius: 5px;
+  border: 1px solid var(--color-light);
+  background: var(--color-light-2);
+
+  &:hover {
+    transform: scale(1.015);
+  }
+
+  .image {
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .description {
+    position: relative;
+    padding: 1rem;
+
+    p {
+      margin: 1rem;
+    }
+
+    span {
+      font-weight: 600;
+    }
+
+    .sold,
+    .available {
+      text-transform: uppercase;
+      position: absolute;
+      border-radius: 5px;
+      font-weight: 400;
+      top: 1rem;
+      right: 1rem;
+      padding: 4px 8px;
+      font-size: var(--font-small);
+      color: var(--color-white);
+    }
+
+    .sold {
+      background: var(--color-danger);
+    }
+
+    .available {
+      text-transform: uppercase;
+      background: var(--color-success);
+    }
+  }
+}

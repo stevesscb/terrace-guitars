@@ -1,0 +1,21 @@
+@import '@/app/variables.scss';
+
+.title {
+  margin: 1.5rem 0;
+}
+
+.guitars {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4rem;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(1, auto);
+    row-gap: 2rem;
+  }
+}

@@ -1,0 +1,12 @@
+#alert-dialog-title {
+  padding: 3rem;
+  font-weight: 500;
+  font-size: var(--font-large);
+}
+
+#actions {
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
